@@ -13,11 +13,12 @@
       overflow-x: hidden;
     }
     .section {
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      padding: 40px;
     }
     /* Cover */
     .photo-frame {
@@ -31,7 +32,6 @@
       height: 100%;
       object-fit: cover;
       border-radius: 50%;
-      border: 6px solid transparent;
       box-shadow: 0 0 30px rgba(255,215,0,0.8);
     }
     .photo-frame::after {
@@ -73,10 +73,10 @@
       font-size: 1.2em;
       color: #ffd700;
     }
-    /* Detail Section */
+    /* Detail */
     .detail {
       background: rgba(0,0,0,0.6);
-      padding: 40px;
+      padding: 30px;
       border-radius: 20px;
       max-width: 600px;
     }
@@ -101,13 +101,29 @@
       font-weight: bold;
       cursor: pointer;
     }
+    /* Galeri */
+    .gallery {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+    }
+    .gallery img {
+      width: 200px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255,215,0,0.6);
+    }
   </style>
 </head>
 <body>
+  <!-- Musik Latar -->
+  <audio autoplay loop>
+    <source src="musik-romantis.mp3" type="audio/mpeg">
+  </audio>
+
   <!-- Cover -->
   <div class="section" id="cover">
     <div class="photo-frame">
-      <img src="image.png" alt="Foto Mempelai">
+      <img src="foto-mempelai.jpg" alt="Foto Mempelai">
     </div>
     <h1>Sophia & Ethan</h1>
     <div class="date">Sabtu, 25 Agustus 2024</div>
@@ -122,6 +138,7 @@
       <p>📍 Lokasi: Hotel Emerald Ballroom</p>
       <p>⏰ Waktu: 16:00 WIB</p>
       <p>👗 Dress Code: Formal Elegan</p>
+      <p><a href="https://maps.google.com" target="_blank" class="btn">Lihat Lokasi</a></p>
     </div>
     <a href="#rsvp" class="btn">RSVP Sekarang</a>
   </div>
@@ -139,7 +156,11 @@
   <!-- Galeri -->
   <div class="section" id="gallery">
     <h2>Galeri Foto</h2>
-    <p>(Slider foto prewedding bisa ditambahkan di sini)</p>
+    <div class="gallery">
+      <img src="foto1.jpg" alt="Foto 1">
+      <img src="foto2.jpg" alt="Foto 2">
+      <img src="foto3.jpg" alt="Foto 3">
+    </div>
   </div>
 
   <script>
