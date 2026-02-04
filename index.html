@@ -7,7 +7,7 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to bottom right, #004d40, #880e4f);
+      background: linear-gradient(to bottom right, #1a1a1a, #880e4f);
       color: #fff;
       text-align: center;
       overflow-x: hidden;
@@ -19,6 +19,11 @@
       justify-content: center;
       align-items: center;
       padding: 40px;
+      animation: fadeIn 1s ease;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
     }
     /* Cover */
     .photo-frame {
@@ -73,50 +78,39 @@
       font-size: 1.2em;
       color: #ffd700;
     }
-    /* Detail */
-    .detail {
-      background: rgba(0,0,0,0.6);
-      padding: 30px;
-      border-radius: 20px;
-      max-width: 600px;
-    }
-    .detail h2 {
-      color: #ffd700;
-      margin-bottom: 20px;
-    }
-    /* RSVP */
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      max-width: 400px;
-    }
-    input, button {
-      padding: 10px;
-      border-radius: 5px;
-      border: none;
-    }
-    button {
-      background: #ffd700;
-      font-weight: bold;
-      cursor: pointer;
-    }
     /* Galeri */
     .gallery {
       display: flex;
+      gap: 20px;
       overflow-x: auto;
-      gap: 10px;
+      scroll-snap-type: x mandatory;
     }
     .gallery img {
-      width: 200px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255,215,0,0.6);
+      width: 250px;
+      border-radius: 15px;
+      scroll-snap-align: center;
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.1);
+    }
+    /* Timeline Story */
+    .timeline {
+      max-width: 600px;
+      text-align: left;
+    }
+    .timeline h2 {
+      color: #ffd700;
+      margin-bottom: 20px;
+    }
+    .timeline p {
+      margin: 10px 0;
     }
   </style>
 </head>
 <body>
   <!-- Musik Latar -->
-  <audio autoplay loop>
+  <audio autoplay loop controls>
     <source src="musik-romantis.mp3" type="audio/mpeg">
   </audio>
 
@@ -133,13 +127,11 @@
 
   <!-- Detail Acara -->
   <div class="section" id="detail">
-    <div class="detail">
-      <h2>Detail Acara</h2>
-      <p>📍 Lokasi: Hotel Emerald Ballroom</p>
-      <p>⏰ Waktu: 16:00 WIB</p>
-      <p>👗 Dress Code: Formal Elegan</p>
-      <p><a href="https://maps.google.com" target="_blank" class="btn">Lihat Lokasi</a></p>
-    </div>
+    <h2>Detail Acara</h2>
+    <p>📍 Lokasi: Hotel Emerald Ballroom</p>
+    <p>⏰ Waktu: 16:00 WIB</p>
+    <p>👗 Dress Code: Formal Elegan</p>
+    <iframe src="https://maps.google.com" width="300" height="200"></iframe>
     <a href="#rsvp" class="btn">RSVP Sekarang</a>
   </div>
 
@@ -160,6 +152,17 @@
       <img src="foto1.jpg" alt="Foto 1">
       <img src="foto2.jpg" alt="Foto 2">
       <img src="foto3.jpg" alt="Foto 3">
+    </div>
+  </div>
+
+  <!-- Timeline Story -->
+  <div class="section" id="story">
+    <div class="timeline">
+      <h2>Our Love Story</h2>
+      <p>💌 2018: Pertemuan pertama di kampus</p>
+      <p>🌸 2019: Jalan bersama pertama kali</p>
+      <p>💍 2023: Lamaran resmi</p>
+      <p>❤️ 2024: Hari pernikahan</p>
     </div>
   </div>
 
