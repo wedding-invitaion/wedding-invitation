@@ -3,6 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fbc2eb">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+
 <title>Wedding Invitation</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -152,7 +157,7 @@ button{
   cursor:pointer;
 }
 
-/* FLOWER */
+/* 🌸 FLOWER */
 .flower{
   position:fixed;
   top:-50px;
@@ -164,7 +169,32 @@ button{
   to{transform:translateY(110vh) rotate(360deg)}
 }
 
-/* TOGGLE */
+/* 🎉 PREMIUM CONFETTI */
+.confetti{
+  position:fixed;
+  top:-20px;
+  width:10px;
+  height:14px;
+  opacity:.9;
+  animation:confettiFall linear forwards;
+  z-index:9998;
+}
+
+.confetti.heart{
+  width:16px;
+  height:16px;
+  background:none;
+  font-size:16px;
+}
+
+@keyframes confettiFall{
+  to{
+    transform:translateY(110vh) rotate(1080deg);
+    opacity:0;
+  }
+}
+
+/* 🌙 TOGGLE */
 #themeToggle{
   position:fixed;
   bottom:25px;
@@ -185,20 +215,105 @@ button{
 
 #themeToggle:hover{transform:scale(1.15)}
 
-@media(max-width:768px){
-  h1{font-size:2.7em}
-  .photo-frame{width:200px;height:200px}
-  .glass{padding:30px 20px}
+
+/* 📱 MOBILE FIRST – SUPER HP ONLY */
+@media (max-width: 600px){
+
+  body{
+    font-size:16px;
+    line-height:1.7;
+  }
+
+  .section{
+    padding:40px 16px;
+    min-height:auto;
+  }
+
+  .glass{
+    padding:28px 20px;
+    border-radius:22px;
+    box-shadow:0 15px 35px rgba(0,0,0,.22);
+  }
+
+  h1{
+    font-size:2.6em;
+    line-height:1.1;
+  }
+
+  h2{
+    font-size:1.5em;
+  }
+
+  .date{
+    font-size:1.1em;
+  }
+
+  /* FOTO MEMPELAI */
+  .photo-frame{
+    width:180px;
+    height:180px;
+    box-shadow:0 0 30px rgba(212,175,55,.8);
+  }
+
+  /* BUTTON = ENAK DI TAP */
+  .btn{
+    width:100%;
+    padding:16px 0;
+    font-size:1.05em;
+    border-radius:50px;
+  }
+
+  /* GALLERY SWIPE */
+  .gallery{
+    gap:14px;
+    padding-bottom:5px;
+  }
+
+  .gallery img{
+    width:78vw;
+    max-width:300px;
+    scroll-snap-align:center;
+  }
+
+  /* COUNTDOWN */
+  .countdown{
+    font-size:1.05em;
+    margin-top:14px;
+  }
+
+  /* FORM */
+  input,button{
+    font-size:1em;
+    padding:15px;
+  }
+
+  /* TOGGLE DIPINDAH */
+  #themeToggle{
+    bottom:15px;
+    right:15px;
+    width:46px;
+    height:46px;
+    font-size:20px;
+  }
+
+  /* ANIMASI DIPERHALUS */
+  .photo-frame,
+  .btn{
+    animation:none;
+  }
 }
+
+
+
 </style>
 </head>
 
 <body>
 
-<!-- TOGGLE -->
+<!-- 🌙 TOGGLE -->
 <div id="themeToggle" onclick="toggleTheme()">🌙</div>
 
-<!-- LOCK SCREEN -->
+<!-- 🔐 LOCK SCREEN -->
 <div id="lockScreen" style="
 position:fixed;inset:0;
 background:linear-gradient(135deg,#000,#4a00e0);
@@ -275,25 +390,46 @@ z-index:9999;">
 </div>
 
 <script>
-// OPEN INVITE
+// 🔓 OPEN INVITE
 function openInvite(){
   document.getElementById("lockScreen").style.display="none";
   document.getElementById("bgMusic").play();
+  launchConfetti();
 }
 
-// FLOWERS
-const flowers=["🌸","💮","🌺"];
-for(let i=0;i<25;i++){
+// 🌸 FLOWERS
+const flowers=["🌸"];
+for(let i=0;i<20;i++){
   const f=document.createElement("div");
   f.className="flower";
   f.innerText=flowers[Math.floor(Math.random()*flowers.length)];
   f.style.left=Math.random()*100+"vw";
-  f.style.animationDuration=(5+Math.random()*5)+"s";
+  f.style.animationDuration=(6+Math.random()*5)+"s";
   f.style.fontSize=(18+Math.random()*18)+"px";
   document.body.appendChild(f);
 }
 
-// COUNTDOWN
+// 🎉 PREMIUM CONFETTI
+function launchConfetti(){
+  const colors=["#ffd700","#ff69b4","#ffffff","#ff4d6d","#c77dff"];
+  for(let i=0;i<120;i++){
+    const c=document.createElement("div");
+    const isHeart=Math.random()>0.7;
+    c.className="confetti"+(isHeart?" heart":"");
+    if(isHeart){
+      c.innerHTML="❤️";
+    }else{
+      c.style.background=colors[Math.floor(Math.random()*colors.length)];
+    }
+    c.style.left=Math.random()*100+"vw";
+    c.style.animationDuration=(2+Math.random()*2)+"s";
+    c.style.transform=`rotate(${Math.random()*360}deg)`;
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),4500);
+  }
+}
+
+// ⏳ COUNTDOWN
 const target=new Date("Aug 25, 2024 16:00:00").getTime();
 const cd=document.getElementById("countdown");
 setInterval(()=>{
@@ -305,16 +441,14 @@ setInterval(()=>{
   cd.innerHTML=`${days} Hari ${hours} Jam ${mins} Menit`;
 },1000);
 
-// THEME TOGGLE
+// 🌙 THEME
 const toggleBtn=document.getElementById("themeToggle");
-
 function toggleTheme(){
   document.body.classList.toggle("light");
   const light=document.body.classList.contains("light");
   toggleBtn.innerHTML=light?"☀️":"🌙";
   localStorage.setItem("theme",light?"light":"dark");
 }
-
 if(localStorage.getItem("theme")==="light"){
   document.body.classList.add("light");
   toggleBtn.innerHTML="☀️";
