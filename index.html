@@ -1,184 +1,325 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Wedding Invitation Premium</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to bottom right, #1a1a1a, #880e4f);
-      color: #fff;
-      text-align: center;
-      overflow-x: hidden;
-    }
-    .section {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 40px;
-      animation: fadeIn 1s ease;
-    }
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-    /* Cover */
-    .photo-frame {
-      position: relative;
-      width: 250px;
-      height: 250px;
-      margin-bottom: 20px;
-    }
-    .photo-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-      box-shadow: 0 0 30px rgba(255,215,0,0.8);
-    }
-    .photo-frame::after {
-      content: "";
-      position: absolute;
-      top: -15px; left: -15px;
-      width: 280px; height: 280px;
-      background: url('floral-frame.svg') no-repeat center;
-      background-size: contain;
-      pointer-events: none;
-    }
-    h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3em;
-      margin: 0;
-      color: #ffd700;
-    }
-    .date {
-      font-size: 1.4em;
-      margin: 15px 0;
-    }
-    .btn {
-      background: #ffd700;
-      color: #000;
-      padding: 15px 40px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 0 20px rgba(255,215,0,0.8);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 30px rgba(255,215,0,1);
-    }
-    /* Countdown */
-    .countdown {
-      margin-top: 20px;
-      font-size: 1.2em;
-      color: #ffd700;
-    }
-    /* Galeri */
-    .gallery {
-      display: flex;
-      gap: 20px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-    }
-    .gallery img {
-      width: 250px;
-      border-radius: 15px;
-      scroll-snap-align: center;
-      transition: transform 0.3s ease;
-    }
-    .gallery img:hover {
-      transform: scale(1.1);
-    }
-    /* Timeline Story */
-    .timeline {
-      max-width: 600px;
-      text-align: left;
-    }
-    .timeline h2 {
-      color: #ffd700;
-      margin-bottom: 20px;
-    }
-    .timeline p {
-      margin: 10px 0;
-    }
-  </style>
-</head>
-<body>
-  <!-- Musik Latar -->
-  <audio autoplay loop controls>
-    <source src="musik-romantis.mp3" type="audio/mpeg">
-  </audio>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Invitation</title>
 
-  <!-- Cover -->
-  <div class="section" id="cover">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  color:#fff;
+  text-align:center;
+  background:linear-gradient(-45deg,#ff758c,#ff7eb3,#8e2de2,#4a00e0);
+  background-size:400% 400%;
+  animation:bgMove 12s ease infinite;
+  overflow-x:hidden;
+  transition:.5s;
+}
+
+@keyframes bgMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* LIGHT MODE */
+body.light{
+  background:linear-gradient(-45deg,#fff1eb,#ace0f9,#fbc2eb,#a6c1ee);
+  color:#333;
+}
+
+.section{
+  min-height:100vh;
+  padding:60px 20px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.glass{
+  background:rgba(255,255,255,.15);
+  backdrop-filter:blur(8px);
+  border-radius:25px;
+  padding:40px;
+  max-width:720px;
+  width:100%;
+  box-shadow:0 20px 50px rgba(0,0,0,.35);
+  transition:.5s;
+}
+
+body.light .glass{
+  background:rgba(255,255,255,.7);
+  color:#333;
+}
+
+.photo-frame{
+  width:240px;
+  height:240px;
+  margin:auto;
+  border-radius:50%;
+  overflow:hidden;
+  box-shadow:0 0 40px rgba(255,215,0,.9);
+  animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-12px)}
+}
+
+.photo-frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+h1{
+  font-family:'Great Vibes',cursive;
+  font-size:3.5em;
+  margin:20px 0 10px;
+  color:#ffd700;
+}
+
+body.light h1,
+body.light h2{color:#c2185b}
+
+h2{color:#ffd700}
+
+.date{font-size:1.3em;opacity:.9}
+
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  background:linear-gradient(135deg,#ffd700,#fff2a8);
+  color:#000;
+  padding:14px 45px;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:600;
+  box-shadow:0 0 25px rgba(255,215,0,.9);
+  transition:.4s;
+}
+
+.btn:hover{transform:scale(1.1)}
+
+body.light .btn{
+  background:linear-gradient(135deg,#ff8fa3,#ffd6e0);
+}
+
+.countdown{margin-top:20px;font-size:1.2em}
+
+.gallery{
+  display:flex;
+  gap:20px;
+  overflow-x:auto;
+  padding:10px;
+}
+
+.gallery img{
+  width:220px;
+  border-radius:18px;
+  transition:.4s;
+}
+
+.gallery img:hover{
+  transform:scale(1.15) rotate(2deg);
+}
+
+.timeline p{text-align:left;margin:12px 0}
+
+form{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+input,button{
+  padding:14px;
+  border-radius:30px;
+  border:none;
+  font-size:1em;
+}
+
+button{
+  background:linear-gradient(135deg,#ffd700,#fff2a8);
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* FLOWER */
+.flower{
+  position:fixed;
+  top:-50px;
+  animation:fall linear infinite;
+  pointer-events:none;
+}
+
+@keyframes fall{
+  to{transform:translateY(110vh) rotate(360deg)}
+}
+
+/* TOGGLE */
+#themeToggle{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  background:rgba(255,255,255,.25);
+  backdrop-filter:blur(8px);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:22px;
+  cursor:pointer;
+  z-index:999;
+  transition:.4s;
+}
+
+#themeToggle:hover{transform:scale(1.15)}
+
+@media(max-width:768px){
+  h1{font-size:2.7em}
+  .photo-frame{width:200px;height:200px}
+  .glass{padding:30px 20px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOGGLE -->
+<div id="themeToggle" onclick="toggleTheme()">🌙</div>
+
+<!-- LOCK SCREEN -->
+<div id="lockScreen" style="
+position:fixed;inset:0;
+background:linear-gradient(135deg,#000,#4a00e0);
+display:flex;justify-content:center;align-items:center;
+z-index:9999;">
+  <div>
+    <h1>Sophia & Ethan</h1>
+    <p>Undangan Pernikahan</p>
+    <button class="btn" onclick="openInvite()">💌 Buka Undangan</button>
+  </div>
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="musik-romantis.mp3" type="audio/mpeg">
+</audio>
+
+<!-- COVER -->
+<div class="section">
+  <div class="glass">
     <div class="photo-frame">
-      <img src="foto-mempelai.jpg" alt="Foto Mempelai">
+      <img src="foto-mempelai.jpg">
     </div>
     <h1>Sophia & Ethan</h1>
     <div class="date">Sabtu, 25 Agustus 2024</div>
-    <a href="#detail" class="btn">BUKA SEKARANG</a>
     <div class="countdown" id="countdown"></div>
+    <a href="#detail" class="btn">Lihat Detail</a>
   </div>
+</div>
 
-  <!-- Detail Acara -->
-  <div class="section" id="detail">
+<!-- DETAIL -->
+<div class="section" id="detail">
+  <div class="glass">
     <h2>Detail Acara</h2>
-    <p>📍 Lokasi: Hotel Emerald Ballroom</p>
-    <p>⏰ Waktu: 16:00 WIB</p>
-    <p>👗 Dress Code: Formal Elegan</p>
-    <iframe src="https://maps.google.com" width="300" height="200"></iframe>
-    <a href="#rsvp" class="btn">RSVP Sekarang</a>
+    <p>📍 Hotel Emerald Ballroom</p>
+    <p>⏰ 16:00 WIB</p>
+    <p>👗 Formal Elegan</p>
+    <a href="#rsvp" class="btn">RSVP</a>
   </div>
+</div>
 
-  <!-- RSVP -->
-  <div class="section" id="rsvp">
+<!-- RSVP -->
+<div class="section" id="rsvp">
+  <div class="glass">
     <h2>Konfirmasi Kehadiran</h2>
     <form>
-      <input type="text" placeholder="Nama Anda" required>
+      <input type="text" placeholder="Nama" required>
       <input type="email" placeholder="Email" required>
-      <button type="submit">Kirim RSVP</button>
+      <button>Kirim RSVP</button>
     </form>
   </div>
+</div>
 
-  <!-- Galeri -->
-  <div class="section" id="gallery">
-    <h2>Galeri Foto</h2>
+<!-- GALERI -->
+<div class="section">
+  <div class="glass">
+    <h2>Galeri</h2>
     <div class="gallery">
-      <img src="foto1.jpg" alt="Foto 1">
-      <img src="foto2.jpg" alt="Foto 2">
-      <img src="foto3.jpg" alt="Foto 3">
+      <img src="foto1.jpg">
+      <img src="foto2.jpg">
+      <img src="foto3.jpg">
     </div>
   </div>
+</div>
 
-  <!-- Timeline Story -->
-  <div class="section" id="story">
-    <div class="timeline">
-      <h2>Our Love Story</h2>
-      <p>💌 2018: Pertemuan pertama di kampus</p>
-      <p>🌸 2019: Jalan bersama pertama kali</p>
-      <p>💍 2023: Lamaran resmi</p>
-      <p>❤️ 2024: Hari pernikahan</p>
-    </div>
+<!-- STORY -->
+<div class="section">
+  <div class="glass timeline">
+    <h2>Our Love Story</h2>
+    <p>💌 2018 – Pertemuan pertama</p>
+    <p>🌸 2019 – Mulai bersama</p>
+    <p>💍 2023 – Lamaran</p>
+    <p>❤️ 2024 – Pernikahan</p>
   </div>
+</div>
 
-  <script>
-    // Countdown Timer
-    const targetDate = new Date("Aug 25, 2024 16:00:00").getTime();
-    const countdownEl = document.getElementById("countdown");
-    setInterval(() => {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
-      const days = Math.floor(distance / (1000*60*60*24));
-      const hours = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
-      const minutes = Math.floor((distance % (1000*60*60))/(1000*60));
-      const seconds = Math.floor((distance % (1000*60))/1000);
-      countdownEl.innerHTML = `Menuju Hari H: ${days}h ${hours}j ${minutes}m ${seconds}d`;
-    }, 1000);
-  </script>
+<script>
+// OPEN INVITE
+function openInvite(){
+  document.getElementById("lockScreen").style.display="none";
+  document.getElementById("bgMusic").play();
+}
+
+// FLOWERS
+const flowers=["🌸","💮","🌺"];
+for(let i=0;i<25;i++){
+  const f=document.createElement("div");
+  f.className="flower";
+  f.innerText=flowers[Math.floor(Math.random()*flowers.length)];
+  f.style.left=Math.random()*100+"vw";
+  f.style.animationDuration=(5+Math.random()*5)+"s";
+  f.style.fontSize=(18+Math.random()*18)+"px";
+  document.body.appendChild(f);
+}
+
+// COUNTDOWN
+const target=new Date("Aug 25, 2024 16:00:00").getTime();
+const cd=document.getElementById("countdown");
+setInterval(()=>{
+  const now=new Date().getTime();
+  const d=target-now;
+  const days=Math.floor(d/(1000*60*60*24));
+  const hours=Math.floor((d/(1000*60*60))%24);
+  const mins=Math.floor((d/(1000*60))%60);
+  cd.innerHTML=`${days} Hari ${hours} Jam ${mins} Menit`;
+},1000);
+
+// THEME TOGGLE
+const toggleBtn=document.getElementById("themeToggle");
+
+function toggleTheme(){
+  document.body.classList.toggle("light");
+  const light=document.body.classList.contains("light");
+  toggleBtn.innerHTML=light?"☀️":"🌙";
+  localStorage.setItem("theme",light?"light":"dark");
+}
+
+if(localStorage.getItem("theme")==="light"){
+  document.body.classList.add("light");
+  toggleBtn.innerHTML="☀️";
+}
+</script>
+
 </body>
 </html>
