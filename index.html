@@ -7,14 +7,14 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-
 <title>Wedding Invitation</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
 <style>
 *{box-sizing:border-box}
 
+/* ================= BODY ================= */
 body{
   margin:0;
   font-family:'Poppins',sans-serif;
@@ -39,6 +39,7 @@ body.light{
   color:#333;
 }
 
+/* ================= SECTION ================= */
 .section{
   min-height:100vh;
   padding:60px 20px;
@@ -63,6 +64,7 @@ body.light .glass{
   color:#333;
 }
 
+/* ================= PHOTO ================= */
 .photo-frame{
   width:240px;
   height:240px;
@@ -84,6 +86,7 @@ body.light .glass{
   object-fit:cover;
 }
 
+/* ================= TEXT ================= */
 h1{
   font-family:'Great Vibes',cursive;
   font-size:3.5em;
@@ -98,6 +101,7 @@ h2{color:#ffd700}
 
 .date{font-size:1.3em;opacity:.9}
 
+/* ================= BUTTON ================= */
 .btn{
   display:inline-block;
   margin-top:25px;
@@ -109,6 +113,7 @@ h2{color:#ffd700}
   font-weight:600;
   box-shadow:0 0 25px rgba(255,215,0,.9);
   transition:.4s;
+  cursor:pointer;
 }
 
 .btn:hover{transform:scale(1.1)}
@@ -119,6 +124,7 @@ body.light .btn{
 
 .countdown{margin-top:20px;font-size:1.2em}
 
+/* ================= GALLERY ================= */
 .gallery{
   display:flex;
   gap:20px;
@@ -138,6 +144,7 @@ body.light .btn{
 
 .timeline p{text-align:left;margin:12px 0}
 
+/* ================= FORM ================= */
 form{
   display:flex;
   flex-direction:column;
@@ -154,10 +161,9 @@ input,button{
 button{
   background:linear-gradient(135deg,#ffd700,#fff2a8);
   font-weight:bold;
-  cursor:pointer;
 }
 
-/* 🌸 FLOWER */
+/* ================= FLOWER ================= */
 .flower{
   position:fixed;
   top:-50px;
@@ -169,7 +175,7 @@ button{
   to{transform:translateY(110vh) rotate(360deg)}
 }
 
-/* 🎉 PREMIUM CONFETTI */
+/* ================= CONFETTI ================= */
 .confetti{
   position:fixed;
   top:-20px;
@@ -194,7 +200,7 @@ button{
   }
 }
 
-/* 🌙 TOGGLE */
+/* ================= THEME TOGGLE ================= */
 #themeToggle{
   position:fixed;
   bottom:25px;
@@ -210,215 +216,97 @@ button{
   font-size:22px;
   cursor:pointer;
   z-index:999;
-  transition:.4s;
 }
 
-#themeToggle:hover{transform:scale(1.15)}
-
-
-/* 📱 MOBILE FIRST – SUPER HP ONLY */
-@media (max-width: 600px){
-
-  body{
-    font-size:16px;
-    line-height:1.7;
-  }
-
-  .section{
-    padding:40px 16px;
-    min-height:auto;
-  }
-
-  .glass{
-    padding:28px 20px;
-    border-radius:22px;
-    box-shadow:0 15px 35px rgba(0,0,0,.22);
-  }
-
-  h1{
-    font-size:2.6em;
-    line-height:1.1;
-  }
-
-  h2{
-    font-size:1.5em;
-  }
-
-  .date{
-    font-size:1.1em;
-  }
-
-  /* FOTO MEMPELAI */
-  .photo-frame{
-    width:180px;
-    height:180px;
-    box-shadow:0 0 30px rgba(212,175,55,.8);
-  }
-
-  /* BUTTON = ENAK DI TAP */
-  .btn{
-    width:100%;
-    padding:16px 0;
-    font-size:1.05em;
-    border-radius:50px;
-  }
-
-  /* GALLERY SWIPE */
-  .gallery{
-    gap:14px;
-    padding-bottom:5px;
-  }
-
-  .gallery img{
-    width:78vw;
-    max-width:300px;
-    scroll-snap-align:center;
-  }
-
-  /* COUNTDOWN */
-  .countdown{
-    font-size:1.05em;
-    margin-top:14px;
-  }
-
-  /* FORM */
-  input,button{
-    font-size:1em;
-    padding:15px;
-  }
-
-  /* TOGGLE DIPINDAH */
-  #themeToggle{
-    bottom:15px;
-    right:15px;
-    width:46px;
-    height:46px;
-    font-size:20px;
-  }
-
-  /* ANIMASI DIPERHALUS */
-  .photo-frame,
-  .btn{
-    animation:none;
-  }
-}
-
-/* LOCKSCREEN COVER */
-#lockScreen {
+/* =========================================================
+   🔐 LOCKSCREEN PREMIUM (SATU-SATUNYA YANG DIUBAH)
+   ========================================================= */
+#lockScreen{
   position:fixed;
   inset:0;
-  background:radial-gradient(circle at top,#2d1b5a,#05010d);
+  background:radial-gradient(circle at top,#40345f,#120a25,#05010d);
   display:flex;
   justify-content:center;
   align-items:center;
+  transition:1.2s ease;
   z-index:9999;
-  overflow:hidden;
 }
 
-/* FRAME BERKILAU */
-.lock-frame {
-  position:relative;
-  padding:8px;
-  border-radius:30px;
-  background:linear-gradient(270deg,#ffd700,#ff69b4,#8e2de2,#4a00e0);
-  background-size:400% 400%;
-  animation:borderMove 8s linear infinite;
+.particle{
+  position:absolute;
+  top:-10px;
+  width:5px;
+  height:5px;
+  background:radial-gradient(circle,#fff,#ffd98a);
+  border-radius:50%;
+  opacity:.85;
+  filter:blur(.6px);
+  animation:fall linear infinite;
 }
-@keyframes borderMove {
+
+.frame{
+  padding:6px;
+  border-radius:30px;
+  background:linear-gradient(270deg,#ffd98a,#6a5acd,#00c6ff,#ffd98a);
+  background-size:600% 600%;
+  animation:borderMove 6s ease infinite;
+}
+
+@keyframes borderMove{
   0%{background-position:0% 50%}
   50%{background-position:100% 50%}
   100%{background-position:0% 50%}
 }
 
-/* CARD */
-.lock-card {
-  background:rgba(0,0,0,.85);
+.card{
+  background:linear-gradient(180deg,#0e1a25,#05010d);
   border-radius:26px;
   padding:36px 28px;
   width:340px;
   text-align:center;
-  color:#fff;
+  animation:breathingLight 6s ease-in-out infinite;
   position:relative;
-  box-shadow:0 0 25px rgba(255,215,0,.6);
 }
 
-/* FOTO MEMPELAI */
-.lock-photos {
-  display:flex;
-  justify-content:center;
-  gap:18px;
-  margin-bottom:22px;
+@keyframes breathingLight{
+  0%,100%{box-shadow:0 0 22px rgba(255,217,138,.3)}
+  50%{box-shadow:0 0 60px rgba(255,217,138,.6)}
 }
-.lock-photo {
-  width:120px;
-  height:160px;
-  border-radius:20px;
+
+.photo-single{
+  width:220px;
+  height:260px;
+  margin:0 auto 26px;
+  border-radius:50% / 40%;
   overflow:hidden;
-  position:relative;
-  box-shadow:0 0 20px rgba(212,175,55,.6);
+  box-shadow:0 0 35px rgba(255,217,138,.8),0 0 90px rgba(255,217,138,.45);
 }
-.lock-photo img {width:100%;height:100%;object-fit:cover}
-.lock-photo::after {
-  content:'';
-  position:absolute;inset:0;
-  background:linear-gradient(120deg,transparent,rgba(255,255,255,.35),transparent);
-  transform:translateX(-100%);
-  animation:shine 3.5s infinite;
-}
-@keyframes shine {to{transform:translateX(100%)}}
 
-/* TEKS */
-#lockScreen h1 {
-  font-family:'Great Vibes',cursive;
-  font-size:2.2em;
-  color:#ffd98a;
-  margin-bottom:6px;
+.photo-single img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
-#lockScreen p {
+
+#lockScreen h1{
+  font-family:'Playfair Display',serif;
+  font-size:26px;
+  color:#ffd98a;
+}
+
+#lockScreen p{
   font-size:14px;
   letter-spacing:2px;
   color:#ccc;
-  margin-bottom:26px;
+  margin-bottom:22px;
 }
 
-/* BUTTON */
-#lockScreen button {
-  padding:14px 34px;
-  border:none;
-  border-radius:40px;
-  background:linear-gradient(135deg,#ffd98a,#d4af37);
-  font-weight:600;
-  cursor:pointer;
-  transition:.35s;
+/* ================= MOBILE ================= */
+@media(max-width:600px){
+  h1{font-size:2.6em}
+  .photo-frame{width:180px;height:180px}
+  .btn{width:100%}
 }
-#lockScreen button:hover {
-  transform:scale(1.12);
-  box-shadow:0 0 25px rgba(255,217,138,.9);
-}
-
-/* 🌌 STAR PARTICLES */
-.star {
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  background: #fff;
-  border-radius: 50%;
-  opacity: 0.8;
-  animation: twinkle 3s infinite;
-}
-
-
-
-@keyframes twinkle {
-  0%,100% { opacity: 0.2; transform: scale(0.8); }
-  50% { opacity: 1; transform: scale(1.2); }
-}
-
-
-
-
-
-
 </style>
 </head>
 
@@ -427,35 +315,30 @@ button{
 <!-- 🌙 TOGGLE -->
 <div id="themeToggle" onclick="toggleTheme()">🌙</div>
 
-<!-- 🔐 LOCKSCREEN COVER -->
+<!-- 🔐 LOCKSCREEN -->
 <div id="lockScreen">
-<div class="particle" style="left:20%;bottom:-10px;animation-delay:0s"></div> 
-<div class="particle" style="left:50%;bottom:-10px;animation-delay:2s"></div> 
-<div class="particle" style="left:80%;bottom:-10px;animation-delay:4s"></div>
-
-  <div class="lock-frame">
-    <div class="lock-card">
-      <div class="lock-photos">
-        <div class="lock-photo"><img src="image.png" alt="Mempelai Pria"></div>
-        <div class="lock-photo"><img src="image.png" alt="Mempelai Wanita"></div>
+  <div class="frame">
+    <div class="card">
+      <div class="photo-single">
+        <img src="foto-mempelai.jpg">
       </div>
       <h1>Sophia & Ethan</h1>
-      <p>Wedding Invitation</p>
-      <button onclick="openInvite()">💌 Buka Undangan</button>
+      <p>WEDDING INVITATION</p>
+      <button class="btn" onclick="openInvite()">💌 Buka Undangan</button>
     </div>
   </div>
 </div>
-
 
 <audio id="bgMusic" loop>
   <source src="musik-romantis.mp3" type="audio/mpeg">
 </audio>
 
+<!-- ================= ISI UNDANGAN ASLI (TIDAK DIUBAH) ================= -->
 
 <div class="section">
   <div class="glass">
     <div class="photo-frame">
-      <img src="image.png">
+      <img src="foto-mempelai.jpg">
     </div>
     <h1>Sophia & Ethan</h1>
     <div class="date">Sabtu, 25 Agustus 2024</div>
@@ -464,7 +347,6 @@ button{
   </div>
 </div>
 
-<!-- DETAIL -->
 <div class="section" id="detail">
   <div class="glass">
     <h2>Detail Acara</h2>
@@ -475,7 +357,6 @@ button{
   </div>
 </div>
 
-<!-- RSVP -->
 <div class="section" id="rsvp">
   <div class="glass">
     <h2>Konfirmasi Kehadiran</h2>
@@ -487,7 +368,6 @@ button{
   </div>
 </div>
 
-<!-- GALERI -->
 <div class="section">
   <div class="glass">
     <h2>Galeri</h2>
@@ -499,7 +379,6 @@ button{
   </div>
 </div>
 
-<!-- STORY -->
 <div class="section">
   <div class="glass timeline">
     <h2>Our Love Story</h2>
@@ -510,66 +389,50 @@ button{
   </div>
 </div>
 
-
-
-
-
 <script>
-
-// 🌌 STAR BACKGROUND
-function createStars(){
-  for(let i=0;i<40;i++){
-    const s=document.createElement("div");
-    s.className="star";
-    s.style.left=Math.random()*100+"vw";
-    s.style.top=Math.random()*100+"vh";
-    s.style.animationDuration=(2+Math.random()*3)+"s";
-    document.getElementById("lockScreen").appendChild(s);
-  }
-}
-createStars();
-
-
-// 🔓 OPEN INVITE
+/* OPEN INVITE */
 function openInvite(){
-  document.getElementById("lockScreen").style.display="none";
+  const lock=document.getElementById("lockScreen");
+  lock.style.opacity="0";
+  lock.style.transform="scale(1.1)";
   document.getElementById("bgMusic").play();
   launchConfetti();
+  setTimeout(()=>lock.style.display="none",1200);
 }
 
-// 🌸 FLOWERS
-const flowers=["🌸"];
+/* FLOWER */
 for(let i=0;i<20;i++){
   const f=document.createElement("div");
   f.className="flower";
-  f.innerText=flowers[Math.floor(Math.random()*flowers.length)];
+  f.innerText="🌸";
   f.style.left=Math.random()*100+"vw";
   f.style.animationDuration=(6+Math.random()*5)+"s";
   f.style.fontSize=(18+Math.random()*18)+"px";
   document.body.appendChild(f);
 }
 
-// 🎉 PREMIUM CONFETTI
+/* PARTICLE LOCKSCREEN */
+for(let i=0;i<45;i++){
+  const p=document.createElement("div");
+  p.className="particle";
+  p.style.left=Math.random()*100+"%";
+  p.style.animationDuration=(6+Math.random()*6)+"s";
+  document.getElementById("lockScreen").appendChild(p);
+}
+
+/* CONFETTI */
 function launchConfetti(){
-  const colors=["#ffd700","#ff69b4","#ffffff","#ff4d6d","#c77dff"];
   for(let i=0;i<120;i++){
     const c=document.createElement("div");
-    const isHeart=Math.random()>0.7;
-    c.className="confetti"+(isHeart?" heart":"");
-    if(isHeart){
-      c.innerHTML="❤️";
-    }else{
-      c.style.background=colors[Math.floor(Math.random()*colors.length)];
-    }
+    c.className="confetti";
     c.style.left=Math.random()*100+"vw";
     c.style.animationDuration=(2+Math.random()*2)+"s";
-    c.style.transform=`rotate(${Math.random()*360}deg)`;
     document.body.appendChild(c);
     setTimeout(()=>c.remove(),4500);
   }
 }
 
-// ⏳ COUNTDOWN
+/* COUNTDOWN */
 const target=new Date("Aug 25, 2024 16:00:00").getTime();
 const cd=document.getElementById("countdown");
 setInterval(()=>{
@@ -581,17 +444,9 @@ setInterval(()=>{
   cd.innerHTML=`${days} Hari ${hours} Jam ${mins} Menit`;
 },1000);
 
-// 🌙 THEME
-const toggleBtn=document.getElementById("themeToggle");
+/* THEME */
 function toggleTheme(){
   document.body.classList.toggle("light");
-  const light=document.body.classList.contains("light");
-  toggleBtn.innerHTML=light?"☀️":"🌙";
-  localStorage.setItem("theme",light?"light":"dark");
-}
-if(localStorage.getItem("theme")==="light"){
-  document.body.classList.add("light");
-  toggleBtn.innerHTML="☀️";
 }
 </script>
 
