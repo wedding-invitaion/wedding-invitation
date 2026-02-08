@@ -9,6 +9,7 @@
 
 <title>Wedding Invitation</title>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
 <style>
@@ -46,10 +47,14 @@ body.light{
   display:flex;
   justify-content:center;
   align-items:center;
+  background: linear-gradient(135deg, #ffe0e0, #fff2cc, #ffd6a5);
+  background-size: 400% 400%;
+  
 }
 
 .glass{
-  background:rgba(255,255,255,.15);
+  background: linear-gradient(-45deg, #000, #1a0033, #001f4d, #33001a);
+
   backdrop-filter:blur(8px);
   border-radius:25px;
   padding:40px;
@@ -99,7 +104,12 @@ body.light h2{color:#c2185b}
 
 h2{color:#ffd700}
 
-.date{font-size:1.3em;opacity:.9}
+.date{
+  font-size:1.3em;
+  opacity:.9;
+  font-weight: bold;
+  color: #fff;
+}
 
 /* ================= BUTTON ================= */
 .btn{
@@ -122,7 +132,58 @@ body.light .btn{
   background:linear-gradient(135deg,#ff8fa3,#ffd6e0);
 }
 
-.countdown{margin-top:20px;font-size:1.2em}
+.title {
+  font-family: 'Parisienne';
+  font-size: 2.5em;
+  color: #fff;
+  text-shadow: 0 0 15px #ffd700, 0 0 30px #fff2a8;
+  margin-bottom: 20px;
+}
+
+.names {
+  font-family: 'Parisienne ';
+  font-size: 3.5em;
+  color: #fff;
+  text-shadow: 0 0 20px #ff4d4d, 0 0 40px #ff9999;
+  margin-top: 15px;
+}
+
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.neon {
+  background: #111;
+  padding: 20px 25px;
+  border-radius: 12px;
+  text-align: center;
+  color: #0ff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 1.6em;
+  box-shadow: 0 0 15px #0ff, 0 0 30px #0ff;
+  transition: transform .3s ease;
+}
+
+.neon:hover {
+  transform: translateY(-5px);
+}
+
+.neon span {
+  display: block;
+  font-size: 2.2em;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+}
+
+.neon small {
+  font-size: 0.9em;
+  opacity: 0.85;
+}
+
 
 /* ================= GALLERY ================= */
 .gallery{
@@ -301,6 +362,98 @@ button{
   margin-bottom:22px;
 }
 
+.circle-grid {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.circle {
+  background: rgba(255,255,255,0.08);
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffd700;
+  box-shadow: 0 0 20px rgba(255,215,0,0.4);
+  animation: pulse 2s infinite alternate;
+}
+
+.circle .icon {
+  font-size: 2em;
+  margin-bottom: 8px;
+}
+
+.circle p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1em;
+  text-align: center;
+}
+
+
+@keyframes pulse {
+  from { box-shadow: 0 0 10px #ffd700; }
+  to { box-shadow: 0 0 25px #ffd700; }
+}
+
+.cinematic {
+  background: #0d0d0d;
+  border-radius: 20px;
+  padding: 40px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(255,215,0,0.3);
+  overflow: hidden;
+}
+
+.love-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #FFD700;
+  text-shadow: 0 0 20px #FFD700;
+  animation: fadeZoom 2s ease forwards;
+}
+
+.scene {
+  margin: 40px 0;
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  animation: fadeScene 1.5s ease forwards;
+}
+
+.scene:nth-child(2) { animation-delay: 1s; }
+.scene:nth-child(3) { animation-delay: 2s; }
+.scene:nth-child(4) { animation-delay: 3s; }
+.scene:nth-child(5) { animation-delay: 4s; }
+
+.scene h3 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.8em;
+  color: #FFD700;
+  margin-bottom: 10px;
+}
+
+.scene p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+@keyframes fadeScene {
+  from { opacity: 0; transform: translateY(30px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes fadeZoom {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+
 /* ================= MOBILE ================= */
 @media(max-width:600px){
   h1{font-size:2.6em}
@@ -337,25 +490,44 @@ button{
 
 <div class="section">
   <div class="glass">
+    <h1 class="title">wedding invitation</h1>
     <div class="photo-frame">
-      <img src="foto-mempelai.jpg">
+      <img src="image.png">
     </div>
-    <h1>Sophia & Ethan</h1>
+    <h2 class="names">Sophia & Ethan</h2>
     <div class="date">Sabtu, 25 Agustus 2024</div>
-    <div class="countdown" id="countdown"></div>
+    <div class="countdown" id="countdown">
+      <div class="neon"><span id="days">0</span><small>Hari</small></div> 
+      <div class="neon"><span id="hours">0</span><small>Jam</small></div> 
+      <div class="neon"><span id="mins">0</span><small>Menit</small></div>
+    </div>
     <a href="#detail" class="btn">Lihat Detail</a>
   </div>
 </div>
 
 <div class="section" id="detail">
-  <div class="glass">
-    <h2>Detail Acara</h2>
-    <p>📍 Hotel Emerald Ballroom</p>
-    <p>⏰ 16:00 WIB</p>
-    <p>👗 Formal Elegan</p>
+  <div class="glass detail-card">
+    <h2 class="detail-title">Detail Acara</h2>
+    
+    <div class="circle-grid">
+      <div class="circle">
+        <div class="icon">📍</div>
+        <p>Hotel Emerald Ballroom</p>
+      </div>
+      <div class="circle">
+        <div class="icon">⏰</div>
+        <p>16:00 WIB</p>
+      </div>
+      <div class="circle">
+        <div class="icon">👗</div>
+        <p>Formal Elegan</p>
+      </div>
+    </div>
+
     <a href="#rsvp" class="btn">RSVP</a>
   </div>
 </div>
+
 
 <div class="section" id="rsvp">
   <div class="glass">
@@ -372,9 +544,12 @@ button{
   <div class="glass">
     <h2>Galeri</h2>
     <div class="gallery">
-      <img src="foto1.jpg">
-      <img src="foto2.jpg">
-      <img src="foto3.jpg">
+      <img src="image.png">
+      <img src="image.png">
+      <img src="image.png">
+      <img src="image.png">
+      <img src="image.png">
+      
     </div>
   </div>
 </div>
@@ -382,10 +557,7 @@ button{
 <div class="section">
   <div class="glass timeline">
     <h2>Our Love Story</h2>
-    <p>💌 2018 – Pertemuan pertama</p>
-    <p>🌸 2019 – Mulai bersama</p>
-    <p>💍 2023 – Lamaran</p>
-    <p>❤️ 2024 – Pernikahan</p>
+    <div class="scene"> <h3>2018</h3> <p>💌 Pertemuan pertama — sebuah momen sederhana yang mengubah segalanya.</p> </div> <div class="scene"> <h3>2019</h3> <p>🌸 Mulai bersama — dua hati mulai berjalan seiring, penuh suka dan duka.</p> </div> <div class="scene"> <h3>2023</h3> <p>💍 Lamaran — janji manis di hadapan keluarga, awal komitmen seumur hidup.</p> </div> <div class="scene"> <h3>2024</h3> <p>❤️ Pernikahan — puncak perjalanan cinta, hari penuh doa dan kebahagiaan.</p> </div>
   </div>
 </div>
 
@@ -433,16 +605,38 @@ function launchConfetti(){
 }
 
 /* COUNTDOWN */
-const target=new Date("Aug 25, 2024 16:00:00").getTime();
-const cd=document.getElementById("countdown");
-setInterval(()=>{
-  const now=new Date().getTime();
-  const d=target-now;
-  const days=Math.floor(d/(1000*60*60*24));
-  const hours=Math.floor((d/(1000*60*60))%24);
-  const mins=Math.floor((d/(1000*60))%60);
-  cd.innerHTML=`${days} Hari ${hours} Jam ${mins} Menit`;
-},1000);
+document.addEventListener("DOMContentLoaded", function() {
+  const target = new Date("2026-02-25T16:00:00").getTime();
+
+  const daysEl = document.getElementById("days");
+  const hoursEl = document.getElementById("hours");
+  const minsEl = document.getElementById("mins");
+  const cd = document.getElementById("countdown");
+
+  setInterval(() => {
+    const now = new Date().getTime();
+    const d = target - now;
+
+    if (d <= 0) {
+      cd.innerHTML = `
+        <div class="glass-box"><span>✨</span><small>Hari H</small></div>
+        <p style="color:#fff; font-weight:bold; margin-top:10px;">
+          Hari yang dinanti telah tiba 💖
+        </p>
+      `;
+      return;
+    }
+
+    const days = Math.floor(d / (1000*60*60*24));
+    const hours = Math.floor((d / (1000*60*60)) % 24);
+    const mins = Math.floor((d / (1000*60)) % 60);
+
+    daysEl.innerText = days;
+    hoursEl.innerText = hours;
+    minsEl.innerText = mins;
+  }, 1000);
+});
+
 
 /* THEME */
 function toggleTheme(){
