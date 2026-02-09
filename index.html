@@ -149,41 +149,42 @@ body.light .btn{
 }
 
 
-.countdown {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 30px;
+/* ================= COUNTDOWN FINAL ================= */
+
+.countdown{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  margin-top:30px;
+  flex-wrap:wrap;
 }
 
-.neon {
-  background: #111;
-  padding: 20px 25px;
-  border-radius: 12px;
-  text-align: center;
-  color: #0ff;
-  font-family: 'Poppins', sans-serif;
-  font-weight: bold;
-  font-size: 1.6em;
-  box-shadow: 0 0 15px #0ff, 0 0 30px #0ff;
-  transition: transform .3s ease;
+.neon{
+  background:#111;
+  padding:14px 16px;
+  border-radius:12px;
+  text-align:center;
+  color:#0ff;
+  font-family:'Poppins',sans-serif;
+  font-weight:600;
+  min-width:90px;
+  box-shadow:0 0 12px #0ff, 0 0 22px #0ff;
+  transition:transform .3s ease;
 }
 
-.neon:hover {
-  transform: translateY(-5px);
+.neon span{
+  display:block;
+  font-size:1.5em;        /* ANGKA FINAL */
+  line-height:1.1;
+  text-shadow:0 0 6px #0ff, 0 0 12px #0ff;
 }
 
-.neon span {
-  display: block;
-  font-size: 1.6em; /* ← lebih kecil */
-  text-shadow: 0 0 8px #0ff, 0 0 14px #0ff;
+.neon small{
+  font-size:0.75em;       /* TEKS FINAL */
+  letter-spacing:1px;
+  opacity:0.85;
 }
 
-
-.neon small {
-  font-size: 0.9em;
-  opacity: 0.85;
-}
 
 
 /* ================= GALLERY ================= */
