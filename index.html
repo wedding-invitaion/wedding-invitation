@@ -47,7 +47,7 @@ body.light{
   display:flex;
   justify-content:center;
   align-items:center;
-  background: linear-gradient(135deg, #ffe0e0, #fff2cc, #ffd6a5);
+  background: transparent;
   background-size: 400% 400%;
   
 }
@@ -175,9 +175,10 @@ body.light .btn{
 
 .neon span {
   display: block;
-  font-size: 2.2em;
-  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  font-size: 1.6em; /* ← lebih kecil */
+  text-shadow: 0 0 8px #0ff, 0 0 14px #0ff;
 }
+
 
 .neon small {
   font-size: 0.9em;
@@ -453,13 +454,21 @@ button{
   to { opacity: 1; transform: scale(1); }
 }
 
-
-/* ================= MOBILE ================= */
 @media(max-width:600px){
-  h1{font-size:2.6em}
-  .photo-frame{width:180px;height:180px}
-  .btn{width:100%}
+  .neon{
+    padding:12px 10px;
+  }
+
+  .neon span{
+    font-size:1.2em;
+  }
+
+  .neon small{
+    font-size:0.65em;
+  }
 }
+
+
 </style>
 </head>
 
