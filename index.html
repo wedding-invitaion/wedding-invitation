@@ -66,37 +66,18 @@ body.light{
   height: 2px;
   background: linear-gradient(90deg, transparent, #FFD700, transparent);
 }
-
-@keyframes breathingLight {
-  0%, 100% {
-    box-shadow: 0 0 22px rgba(255,217,138,.3);
-  }
-  50% {
-    box-shadow: 0 0 60px rgba(255,217,138,.6);
-  }
+.timeline {
+  background: linear-gradient(135deg, #00ffcc, #0066ff, #9933ff);
+  background-size: 400% 400%;
+  animation: aurora 12s ease infinite;
+  color: #fff;
 }
-.section .glass {
-  border-radius: 20px;
-  border: 4px solid transparent;
-  border-image: linear-gradient(
-    45deg,
-    #FFD700,   /* emas */
-    #FF69B4,   /* pink */
-    #4169E1,   /* biru */
-    #32CD32    /* hijau */
-  ) 1;
-  animation: breathingLight 3s infinite; /* aktifkan animasi glow */
-}
-@keyframes shineBorder {
-  0% { border-image-source: linear-gradient(45deg, #FFD700, #FF69B4, #4169E1, #32CD32); }
-  50% { border-image-source: linear-gradient(45deg, #32CD32, #FFD700, #FF69B4, #4169E1); }
-  100% { border-image-source: linear-gradient(45deg, #4169E1, #32CD32, #FFD700, #FF69B4); }
+@keyframes aurora {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-.section .glass {
-  animation: breathingLight 3s infinite, shineBorder 8s linear infinite;
-  
-}
 
 
 .glass{
@@ -155,7 +136,7 @@ h2{color:#ffd700}
   font-size:1.3em;
   opacity:.9;
   font-weight: bold;
-  color: #f36464dc;
+  color: #fef4f4;
 }
 
 /* ================= BUTTON ================= */
@@ -180,18 +161,18 @@ body.light .btn{
 }
 
 .title {
-  font-family: 'Parisienne';
-  font-size: 2.5em;
-  color: #fff;
-  text-shadow: 0 0 15px #e5c719, 0 0 30px #fff2a8;
+  font-family: 'Playfair Display',serif;
+  font-size: 1.5em;
+  color: #f9f8f5;
+  text-shadow: 0 0 15px #fafafa, 0 0 30px #fff2a8;
   margin-bottom: 20px;
 }
 
 .names {
-  font-family: 'Parisienne ';
+  font-family:  'Playfair Display',serif;
   font-size: 2em;
-  color: #fff;
-  text-shadow: 0 0 20px #fceded, 0 0 40px #ff9999;
+  color: #ffffff;
+  text-shadow: 0 0 20px #fceded, 0 0 40px #f4f6f0;
   margin-top: 15px;
 }
 
@@ -207,15 +188,15 @@ body.light .btn{
 }
 
 .neon{
-  background:#111;
+  background:linear-gradient(135deg,#2a2d35,#08084b);
   padding:14px 16px;
-  border-radius:12px;
+  border-radius:8px;
   text-align:center;
-  color:#0ff;
+  color:rgb(241, 250, 250);
   font-family:'Poppins',sans-serif;
   font-weight:600;
   min-width:90px;
-  box-shadow:0 0 12px #0ff, 0 0 22px #0ff;
+  box-shadow:0 0 10px rgb(75, 118, 118), 0 0 22px rgb(7, 241, 241);
   transition:transform .3s ease;
 }
 
@@ -247,13 +228,12 @@ body.light .btn{
   padding: 25px;
   margin-top: 20px;
   background: transparent;
-
   text-align: center;
   animation: breathingLight 3s infinite; /* aktifkan animasi */
 }
 
 .quote-card p {
-  font-size: 1.2em;
+  font-size: 0.8em;
   font-family: 'Playfair Display', serif;
   color: #fff;
   text-shadow: 0 0 10px rgba(0,0,0,0.8);
@@ -271,7 +251,7 @@ body.light .btn{
 }
 
 .gallery img {
-  width: calc(33% - 10px);
+  width: calc(37% - 10px);
   border-radius: 12px;
   cursor: pointer;
   transition: transform 0.3s ease, filter 0.3s ease;
@@ -604,7 +584,7 @@ button{
 
 <div class="section">
   <div class="glass">
-    <h1 class="title">wedding invitation</h1>
+    <h1 class="title">Wedding Invitation</h1>
     <div class="photo-frame">
       <img src="image.png">
     </div>
@@ -682,17 +662,16 @@ button{
 <div class="section">
   <div class="glass timeline">
     <h2>Our Love Story</h2>
-    <div class="scene"> <h3>2018</h3> <p>💌 Pertemuan pertama — sebuah momen sederhana yang mengubah segalanya.</p> 
-    </div> <div class="scene"> <h3>2019</h3> <p>🌸 Mulai bersama — dua hati mulai berjalan seiring, penuh suka dan duka.</p> 
-    </div> <div class="scene"> <h3>2023</h3> <p>💍 Lamaran — janji manis di hadapan keluarga, awal komitmen seumur hidup.</p> 
-    </div> <div class="scene"> <h3>2024</h3> <p>❤️ Pernikahan — puncak perjalanan cinta, hari penuh doa dan kebahagiaan.</p> </div>
+    <div class="scene"> <h3>2018</h3> <p>Pertemuan pertama — sebuah momen sederhana yang mengubah segalanya.</p> 
+    </div> <div class="scene"> <h3>2019</h3> <p>Mulai bersama — dua hati mulai berjalan seiring, penuh suka dan duka.</p> 
+    </div> <div class="scene"> <h3>2023</h3> <p>Lamaran — janji manis di hadapan keluarga, awal komitmen seumur hidup.</p> 
+    </div> <div class="scene"> <h3>2024</h3> <p>Pernikahan — puncak perjalanan cinta, hari penuh doa dan kebahagiaan.</p> </div>
   </div>
 </div>
 
-<!-- Section Lokasi -->
 <section class="section">
-  <div class="glass">
-    <h2>📍 Lokasi</h2>
+  <div class="glass lokasi-card">
+    <h2>Lokasi</h2>
     <p>Gedung Serbaguna<br>Jl. Merdeka No. 10, Palembang</p>
     <a href="https://maps.google.com" class="btn">Lihat di Maps</a>
   </div>
