@@ -67,11 +67,42 @@ body.light{
   background: linear-gradient(90deg, transparent, #FFD700, transparent);
 }
 
+@keyframes breathingLight {
+  0%, 100% {
+    box-shadow: 0 0 22px rgba(255,217,138,.3);
+  }
+  50% {
+    box-shadow: 0 0 60px rgba(255,217,138,.6);
+  }
+}
+.section .glass {
+  border-radius: 20px;
+  border: 4px solid transparent;
+  border-image: linear-gradient(
+    45deg,
+    #FFD700,   /* emas */
+    #FF69B4,   /* pink */
+    #4169E1,   /* biru */
+    #32CD32    /* hijau */
+  ) 1;
+  animation: breathingLight 3s infinite; /* aktifkan animasi glow */
+}
+@keyframes shineBorder {
+  0% { border-image-source: linear-gradient(45deg, #FFD700, #FF69B4, #4169E1, #32CD32); }
+  50% { border-image-source: linear-gradient(45deg, #32CD32, #FFD700, #FF69B4, #4169E1); }
+  100% { border-image-source: linear-gradient(45deg, #4169E1, #32CD32, #FFD700, #FF69B4); }
+}
+
+.section .glass {
+  animation: breathingLight 3s infinite, shineBorder 8s linear infinite;
+  
+}
+
 
 .glass{
   background: linear-gradient(-45deg, #000, #1a0033, #001f4d, #33001a);
   backdrop-filter:blur(8px);
-  border-radius:25px;
+  border-radius:30px ;
   padding:24px;
   max-width:720px;
   width:100%;
@@ -80,7 +111,7 @@ body.light{
 }
 
 body.light .glass{
-  background:rgba(255,255,255,.7);
+  background: linear-gradient(135deg, #fdfdfd, #fdd3f2f0);
   color:#333;
 }
 
@@ -105,6 +136,7 @@ body.light .glass{
   height:100%;
   object-fit:cover;
 }
+
 
 /* ================= TEXT ================= */
 h1{
@@ -198,6 +230,34 @@ body.light .btn{
   font-size:0.75em;       /* TEKS FINAL */
   letter-spacing:1px;
   opacity:0.85;
+}
+
+@keyframes breathingLight {
+  0%, 100% {
+    box-shadow: 0 0 22px rgba(255,217,138,.3);
+  }
+  50% {
+    box-shadow: 0 0 60px rgba(255,217,138,.6);
+  }
+}
+
+.quote-card {
+  border: 4px solid #FFD700;
+  border-radius: 25px;
+  padding: 25px;
+  margin-top: 20px;
+  background: transparent;
+
+  text-align: center;
+  animation: breathingLight 3s infinite; /* aktifkan animasi */
+}
+
+.quote-card p {
+  font-size: 1.2em;
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0,0,0,0.8);
+  line-height: 1.6;
 }
 
 
@@ -559,6 +619,23 @@ button{
   </div>
 </div>
 
+<!-- Section Quotes / Doa Pernikahan -->
+<section class="section">
+  <div class="glass">
+    <h2>Quotes & Doa Pernikahan</h2>
+    
+    <div class="quote-card">
+      <p>
+        "Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri, supaya kamu merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang." 
+        <br>(QS. Ar-Rum: 21)
+      </p>
+    </div>
+    
+  </div>
+</section>
+
+
+
 <div class="section" id="detail">
   <div class="glass detail-card">
     <h2 class="detail-title">Detail Acara</h2>
@@ -577,6 +654,8 @@ button{
         <p>Formal Elegan</p>
       </div>
     </div>
+
+
 
     <a href="#rsvp" class="btn">RSVP</a>
   </div>
@@ -652,15 +731,6 @@ button{
     </form>
   </div>
 </div>
-
-<!-- Section Quotes / Doa Pernikahan -->
-<section class="section">
-  <div class="glass">
-    <div class="icon">🙏</div>
-    <h2>Quotes & Doa Pernikahan</h2>
-    <p>"Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri, supaya kamu merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang." (QS. Ar-Rum: 21)</p>
-  </div>
-</section>
 
 
 <!-- Section Terima Kasih -->
