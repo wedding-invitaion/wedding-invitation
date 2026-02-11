@@ -138,6 +138,10 @@ h2{color:#ffd700}
   font-weight: bold;
   color: #fef4f4;
 }
+.light .date { color: #aa2679; /* abu gelap */ 
+  text-shadow: none;
+}
+
 
 /* ================= BUTTON ================= */
 .btn{
@@ -174,6 +178,30 @@ body.light .btn{
   color: #ffffff;
   text-shadow: 0 0 20px #fceded, 0 0 40px #f4f6f0;
   margin-top: 15px;
+}
+/* ================= rekening ================= */
+.rekening-number {
+  font-size: 1.6em;
+  letter-spacing: 3px;
+  font-weight: bold;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  text-shadow: 0 0 10px #ff69b4, 0 0 20px #a64ca6;
+}
+
+.rekening-number::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  100% { left: 100%; }
 }
 
 
@@ -357,6 +385,9 @@ button{
   cursor:pointer;
   z-index:999;
 }
+
+
+
 
 /* =========================================================
    🔐 LOCKSCREEN PREMIUM (SATU-SATUNYA YANG DIUBAH)
@@ -669,32 +700,28 @@ button{
   </div>
 </div>
 
-<section class="section">
-  <div class="glass lokasi-card">
-    <h2>Lokasi</h2>
-    <p>Gedung Serbaguna<br>Jl. Merdeka No. 10, Palembang</p>
-    <a href="https://maps.google.com" class="btn">Lihat di Maps</a>
+<!-- Section Lokasi -->
+<section class="section" id="lokasi">
+  <div class="glass">
+    <div class="lokasi-content">
+      <h2>Lokasi</h2>
+      <p>Gedung Serbaguna<br>Jl. Merdeka No. 10, Palembang</p>
+      <a href="https://maps.google.com?q=Gedung+Serbaguna+Palembang" class="btn">Lihat di Maps</a>
+    </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="glass">
-    <div class="icon">⏰</div>
-    <h2>Rundown Acara</h2>
-    <ul class="rundown">
-      <li>09:00 – Akad Nikah</li>
-      <li>11:00 – Resepsi</li>
-      <li>13:00 – Hiburan & Ramah Tamah</li>
-    </ul>
-  </div>
-</section>
-
-<!-- Section Rekening -->
-<section class="section">
-  <div class="glass">
-    <h2>💳 Rekening</h2>
-    <p>Bank BCA<br>1234567890<br>a.n. Nama Pengantin</p>
-    <a href="#" class="btn">Copy Nomor</a>
+<section class="section" id="rekening">
+  <div class="glass rekening-card">
+    <h2>wedding gift</h2>
+    <div class="rekening-body">
+      <p class="date">💳 Bank BCA</p>
+      <p class="rekening-number">1234 5678 9012</p>
+      <p class="holder">a.n. Nama Pengantin</p>
+      <p class="date">💳 Bank BCA</p>
+      <p class="rekening-number">1234 5678 9012</p>
+      <p class="holder">a.n. Nama Pengantin</p>
+    </div>
   </div>
 </section>
 
@@ -715,7 +742,6 @@ button{
 <!-- Section Terima Kasih -->
 <section class="section">
   <div class="glass">
-    <div class="icon">🎉</div>
     <h2>Terima Kasih</h2>
     <p>Terima kasih atas doa dan kehadiran Anda. Kehormatan dan kebahagiaan bagi kami dapat berbagi momen istimewa ini bersama Anda.</p>
   </div>
