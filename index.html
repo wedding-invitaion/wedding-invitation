@@ -163,14 +163,24 @@ h2{color:#ffd700}
 body.light .btn{
   background:linear-gradient(135deg,#ff8fa3,#ffd6e0);
 }
-
-.title {
-  font-family: 'Playfair Display',serif;
-  font-size: 1.5em;
-  color: #f9f8f5;
-  text-shadow: 0 0 15px #fafafa, 0 0 30px #fff2a8;
-  margin-bottom: 20px;
+ 
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+.title { 
+  font-family: 'Great Vibes', cursive; 
+  font-size: 2.4em;
+  background: linear-gradient(270deg, #f6cae0, #cfe109, #40e0d0, #4147fc);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: aurora 1s ease infinite;
 }
+.photo-frame { margin-top: 40px; /* jarak ke atas dari tulisan */ }
+@keyframes aurora {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 
 .names {
   font-family:  'Playfair Display',serif;
@@ -468,9 +478,14 @@ button{
 #lockScreen p{
   font-size:14px;
   letter-spacing:2px;
-  color:#ccc;
+  background: linear-gradient(45deg, #eae8e2, #ff69b4, #635ce1, #37de53, #ede579, #3bdada); 
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
   margin-bottom:22px;
+  animation: aurora 4s ease infinite;
+  background-size: 600% 600%;
 }
+@keyframes aurora { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
 
 .circle-grid {
   display: flex;
@@ -713,12 +728,12 @@ button{
 
 <section class="section" id="rekening">
   <div class="glass rekening-card">
-    <h2>wedding gift</h2>
+    <h2>Wedding Gift</h2>
     <div class="rekening-body">
       <p class="date">💳 Bank BCA</p>
       <p class="rekening-number">1234 5678 9012</p>
       <p class="holder">a.n. Nama Pengantin</p>
-      <p class="date">💳 Bank BCA</p>
+      <p class="date">💳 Bank BRI</p>
       <p class="rekening-number">1234 5678 9012</p>
       <p class="holder">a.n. Nama Pengantin</p>
     </div>
