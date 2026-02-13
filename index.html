@@ -67,7 +67,7 @@ body.light{
   background: linear-gradient(90deg, transparent, #FFD700, transparent);
 }
 .timeline {
-  background: linear-gradient(135deg, #00ffcc, #0066ff, #9933ff);
+  background: linear-gradient(135deg, #00ffcc,#00ffcc, #0066ff, #9933ff);
   background-size: 400% 400%;
   animation: aurora 12s ease infinite;
   color: #fff;
@@ -136,7 +136,7 @@ h2{color:#ffd700}
   font-size:1.3em;
   opacity:.9;
   font-weight: bold;
-  color: #fef4f4;
+  color: #61a3f9;
 }
 .light .date { color: #aa2679; /* abu gelap */ 
   text-shadow: none;
@@ -168,19 +168,13 @@ body.light .btn{
 .title { 
   font-family: 'Great Vibes', cursive; 
   font-size: 2.4em;
-  background: linear-gradient(270deg, #f6cae0, #cfe109, #40e0d0, #4147fc);
+  background: linear-gradient(270deg, #f6cae0, #9dab08, #40e0d0,#d72111, #4147fc);
   background-size: 600% 600%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: aurora 1s ease infinite;
+  animation: aurora 2s ease infinite;
 }
 .photo-frame { margin-top: 40px; /* jarak ke atas dari tulisan */ }
-@keyframes aurora {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
 
 .names {
   font-family:  'Playfair Display',serif;
@@ -277,7 +271,13 @@ body.light .btn{
   text-shadow: 0 0 10px rgba(0,0,0,0.8);
   line-height: 1.6;
 }
-
+.light .quote-card p {
+  font-size: 0.8em;
+  font-family: 'Playfair Display', serif;
+  color: #7e1352;
+  text-shadow: 0 0 10px rgba(213, 240, 74, 0.8);
+  line-height: 1.6;
+}
 
 
 /* ================= GALLERY ================= */
@@ -364,12 +364,6 @@ button{
   z-index:9998;
 }
 
-.confetti.heart{
-  width:16px;
-  height:16px;
-  background:none;
-  font-size:16px;
-}
 
 @keyframes confettiFall{
   to{
@@ -428,7 +422,7 @@ button{
 .frame{
   padding:6px;
   border-radius:30px;
-  background:linear-gradient(270deg,#ffd98a,#6a5acd,#00c6ff,#ffd98a);
+  background:linear-gradient(270deg,#f8f85a,#6a5acd,#00c6ff,#2bee2f,#e92323);
   background-size:600% 600%;
   animation:borderMove 6s ease infinite;
 }
@@ -485,7 +479,7 @@ button{
   animation: aurora 4s ease infinite;
   background-size: 600% 600%;
 }
-@keyframes aurora { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+
 
 .circle-grid {
   display: flex;
@@ -495,7 +489,8 @@ button{
 
 .circle {
   background: rgba(255,255,255,0.08);
-  border-radius: 50%;
+  border: 4px solid #FFD700;
+  border-radius: 5px;
   width: 140px;
   height: 140px;
   display: flex;
@@ -517,31 +512,24 @@ button{
   font-size: 1em;
   text-align: center;
 }
-
+.circle p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1em;
+  text-align: center;
+}
+.light .circle p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1em;
+  text-align: center;
+  color:#931482
+}
 
 @keyframes pulse {
-  from { box-shadow: 0 0 10px #ffd700; }
-  to { box-shadow: 0 0 25px #ffd700; }
+  from { box-shadow: 0 0 6px #5c5c1b; }
+  to { box-shadow: 0 0 25px #9fc554; }
 }
 
-.cinematic {
-  background: #0d0d0d;
-  border-radius: 20px;
-  padding: 40px;
-  color: #fff;
-  text-align: center;
-  box-shadow: 0 0 40px rgba(255,215,0,0.3);
-  overflow: hidden;
-}
-
-.love-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5em;
-  margin-bottom: 40px;
-  color: #FFD700;
-  text-shadow: 0 0 20px #FFD700;
-  animation: fadeZoom 2s ease forwards;
-}
+.timeline { position: relative; padding: 50px 20px; }
 
 .scene {
   margin: 40px 0;
@@ -573,10 +561,177 @@ button{
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-@keyframes fadeZoom {
-  from { opacity: 0; transform: scale(0.8); }
-  to { opacity: 1; transform: scale(1); }
+/*   */
+/* ===== WELCOME MINIMAL ELEGANT ===== */
+
+.welcome{
+  text-align:center;
+  padding:15px 25px;
 }
+
+/* Kepada Yth */
+.welcome-to{
+  font-size:13px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#cfcfcf;
+  margin-top:30px;
+}
+
+/* Nama Tamu */
+.guest-name{
+  font-family:'Playfair Display',serif;
+  font-size:20px;
+  color:#ffd700;
+  margin-top:6px;
+}
+
+
+.couple-profile{
+  text-align:center;
+  padding:70px 25px;
+}
+
+.profile-title{
+  font-family:'Playfair Display',serif;
+  font-size:32px;
+  color:#ffd700;
+  margin-bottom:50px;
+  letter-spacing:2px;
+}
+
+.profile-wrapper{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:40px;
+  flex-wrap:wrap;
+  margin-top: -40px;
+}
+
+/* Card */
+.profile-card{
+  max-width:250px;
+  text-align:center;
+  transition:.4s ease;
+}
+
+.profile-card img{
+  width:160px;
+  height:160px;
+  object-fit:cover;
+  border-radius:50%;
+  border:4px solid #ffd700;
+  margin-bottom:20px;
+  transition:.4s ease;
+}
+
+.profile-card:hover img{
+  transform:scale(1.05);
+  box-shadow:0 0 25px rgba(255,215,0,.5);
+}
+
+
+.profile-card p{
+  font-size:14px;
+  color:#ddd;
+}
+
+/* Divider */
+.divider{
+  font-size:28px;
+  color:#ffd700;
+  opacity:.8;
+}
+
+/* profile mempelai */
+/* ===== DARK LUXURY PROFILE ===== */
+
+.dark-luxury{
+  text-align:center;
+  padding:90px 30px;
+}
+
+/* Wrapper */
+.profile-wrapper{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:60px;
+  flex-wrap:wrap;
+}
+
+/* Card */
+.profile-card{
+  max-width:260px;
+  text-align:center;
+  transition:.5s ease;
+}
+
+/* Luxury Frame */
+.image-frame{
+  padding:8px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#c9a23f,#fff3c4,#c9a23f);
+  display:inline-block;
+  margin-bottom:25px;
+  transition:.5s ease;
+}
+
+.image-frame img{
+  width:180px;
+  height:180px;
+  object-fit:cover;
+  border-radius:50%;
+  display:block;
+}
+
+/* Hover effect */
+.profile-card:hover .image-frame{
+  box-shadow:0 0 40px rgba(201,162,63,.6);
+  transform:scale(1.05);
+}
+
+.profile-card h3{
+  font-family:'Playfair Display',serif;
+  font-size:22px;
+  color:#fff;
+  margin-bottom:10px;
+}
+.light .profile-card h3{
+  font-family:'Playfair Display',serif;
+  font-size:22px;
+  color:#a43189;
+  margin-bottom:10px;
+}
+
+.profile-card p{
+  font-size:14px;
+  color:#bbb;
+}
+
+/* Divider */
+.divider{
+  font-size:26px;
+  color:#c9a23f;
+  opacity:.8;
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .profile-wrapper{
+    flex-direction:column;
+    gap:40px;
+  }
+
+  .divider{
+    transform:rotate(90deg);
+  }
+}
+
+
+
+/*  display */
 
 @media(max-width:600px){
   .section { padding: 30px 15px; /* lebih rapat di HP */ }
@@ -630,7 +785,7 @@ button{
 
 <div class="section">
   <div class="glass">
-    <h1 class="title">Wedding Invitation</h1>
+    <h2 class="title">Wedding Invitation</h2>
     <div class="photo-frame">
       <img src="image.png">
     </div>
@@ -644,6 +799,58 @@ button{
     <a href="#detail" class="btn">Lihat Detail</a>
   </div>
 </div>
+
+
+<section class="section">
+  <div class="glass">
+     <h2 class="names">our invitation</h2>
+    <!-- Kata Sambutan -->
+    <div class="welcome">
+      <p>
+        Dengan penuh rasa syukur dan kebahagiaan, kami mengundang Anda
+        untuk menyusuri perjalanan cinta kami.
+        Semoga setiap cerita membawa senyum dan kehangatan di hati Anda.
+      </p>
+      <p class="welcome-to">Kepada Yth.</p>
+      <h3 class="guest-name">Bapak / Ibu / Saudara/i</h3>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="glass">
+    <h2>The Wedding Couple</h2>
+    <div class="couple-profile dark-luxury">
+      <div class="profile-wrapper">
+
+        <!-- Groom -->
+        <div class="profile-card">
+          <div class="image-frame">
+            <img src="image.png" alt="Pengantin Pria">
+          </div>
+          <h3 >dw</h3>
+          <p>Putra dari Bapak A & Ibu B</p>
+        </div>
+
+        <div class="divider">✦</div>
+
+        <!-- Bride -->
+        <div class="profile-card">
+          <div class="image-frame">
+            <img src="image.png" alt="Pengantin Wanita">
+          </div>
+          <h3>mr</h3>
+          <p>Putri dari Bapak C & Ibu D</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 
 <!-- Section Quotes / Doa Pernikahan -->
 <section class="section">
@@ -695,7 +902,6 @@ button{
       <img src="image.png" alt="Foto 2">
       <img src="image.png" alt="Foto 3">
     </div>
-    <div class="particles"></div>
   </div>
 </div>
 
@@ -859,10 +1065,26 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-/* THEME */
-function toggleTheme(){
-  document.body.classList.toggle("light");
+
+function toggleTheme() {
+  const body = document.body;
+  const toggleBtn = document.getElementById("themeToggle");
+
+  // toggle class "light"
+  body.classList.toggle("light");
+
+  // ganti ikon sesuai tema
+  if (body.classList.contains("light")) {
+    toggleBtn.textContent = "🌙"; // mode light → tampilkan bulan sabit
+  } else {
+    toggleBtn.textContent = "☀️"; // mode dark → tampilkan matahari
+  }
 }
+
+
+
+
+
 </script>
 
 </body>
