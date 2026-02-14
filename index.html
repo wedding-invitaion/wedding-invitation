@@ -587,147 +587,103 @@ button{
 }
 
 
-.couple-profile{
-  text-align:center;
-  padding:70px 25px;
-}
 
-.profile-title{
-  font-family:'Playfair Display',serif;
-  font-size:32px;
-  color:#ffd700;
-  margin-bottom:50px;
-  letter-spacing:2px;
-}
-
-.profile-wrapper{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:40px;
-  flex-wrap:wrap;
-  margin-top: -40px;
-}
-
-/* Card */
-.profile-card{
-  max-width:250px;
-  text-align:center;
-  transition:.4s ease;
-}
-
-.profile-card img{
-  width:160px;
-  height:160px;
-  object-fit:cover;
-  border-radius:50%;
-  border:4px solid #ffd700;
-  margin-bottom:20px;
-  transition:.4s ease;
-}
-
-.profile-card:hover img{
-  transform:scale(1.05);
-  box-shadow:0 0 25px rgba(255,215,0,.5);
-}
-
-
-.profile-card p{
-  font-size:14px;
-  color:#ddd;
-}
-
-/* Divider */
-.divider{
-  font-size:28px;
-  color:#ffd700;
-  opacity:.8;
-}
 
 /* profile mempelai */
 /* ===== DARK LUXURY PROFILE ===== */
-
-.dark-luxury{
-  text-align:center;
-  padding:90px 30px;
+.page.bride {
+  background: rgba(255,182,193,0.08); /* pink lembut */
+  box-shadow: inset 0 0 40px rgba(97, 14, 26, 0.207),
+              0 0 25px rgba(255,182,193,0.3);
 }
 
-/* Wrapper */
-.profile-wrapper{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:60px;
-  flex-wrap:wrap;
+.page.groom {
+  background: rgba(173,216,230,0.08); /* biru lembut */
+  box-shadow: inset 0 0 40px rgba(16, 102, 131, 0.25),
+              0 0 25px rgba(173,216,230,0.3);
+}
+.page.groom::before { 
+  content: ""; position: absolute; 
+  top: 0; bottom: 0; left: 0; 
+  width: 20px; border-radius: 20px 0 0 20px; 
+  background: linear-gradient(to right, rgba(0,0,0,0.40), transparent); 
+  z-index: 2; /* pastikan di atas background */ }
+
+
+.storybook {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 40px;
+  position: relative;
+  padding: 40px;
 }
 
-/* Card */
-.profile-card{
-  max-width:260px;
-  text-align:center;
-  transition:.5s ease;
+/* Halaman kiri & kanan */
+.page {
+  flex: 1;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: inset 0 0 40px rgba(255,215,0,0.2),
+              0 0 25px rgba(255,215,0,0.3);
+  position: relative;
+  
 }
 
-/* Luxury Frame */
-.image-frame{
-  padding:8px;
-  border-radius:50%;
-  background:linear-gradient(135deg,#c9a23f,#fff3c4,#c9a23f);
-  display:inline-block;
-  margin-bottom:25px;
-  transition:.5s ease;
+/* Efek lipatan buku */
+.page::before {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 20px;
+  background: linear-gradient(to right, rgba(0,0,0,0.2), transparent);
+}
+.groom::before { left: 0; border-radius: 20px 0 0 20px; }
+.bride::before { right: 0; border-radius: 0 20px 20px 0; }
+
+/* Frame foto */
+.photo-frame1 {
+  border: 5px solid gold;
+  border-radius: 50%;
+  padding: 5px;
+  display: inline-block;
+  box-shadow: 0 0 25px rgba(255,215,0,0.6);
+  position: relative;
+}
+.photo-frame1 img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-.image-frame img{
-  width:180px;
-  height:180px;
-  object-fit:cover;
-  border-radius:50%;
-  display:block;
+/* Divider tengah */
+.page-divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2em;
+  color: #ffd700;
+  text-shadow: 0 0 15px rgba(255,215,0,0.8);
+  padding: 0 20px;
+}
+.page-divider .ornament {
+  font-size: 2em;
+  color: #ff69b4;
+  animation: sparkle 2s infinite alternate;
 }
 
-/* Hover effect */
-.profile-card:hover .image-frame{
-  box-shadow:0 0 40px rgba(201,162,63,.6);
-  transform:scale(1.05);
+/* Animasi */
+@keyframes sparkle {
+  from { opacity: 0.6; transform: scale(1); }
+  to { opacity: 1; transform: scale(1.2); }
 }
 
-.profile-card h3{
-  font-family:'Playfair Display',serif;
-  font-size:22px;
-  color:#fff;
-  margin-bottom:10px;
-}
-.light .profile-card h3{
-  font-family:'Playfair Display',serif;
-  font-size:22px;
-  color:#a43189;
-  margin-bottom:10px;
-}
-
-.profile-card p{
-  font-size:14px;
-  color:#bbb;
-}
-
-/* Divider */
-.divider{
-  font-size:26px;
-  color:#c9a23f;
-  opacity:.8;
-}
-
-/* Responsive */
-@media(max-width:768px){
-  .profile-wrapper{
-    flex-direction:column;
-    gap:40px;
-  }
-
-  .divider{
-    transform:rotate(90deg);
-  }
-}
 
 
 
@@ -803,7 +759,7 @@ button{
 
 <section class="section">
   <div class="glass">
-     <h2 class="names">our invitation</h2>
+     <h2 >our invitation</h2>
     <!-- Kata Sambutan -->
     <div class="welcome">
       <p>
@@ -820,35 +776,44 @@ button{
 
 <section class="section">
   <div class="glass">
-    <h2>The Wedding Couple</h2>
-    <div class="couple-profile dark-luxury">
-      <div class="profile-wrapper">
+    <h2>Profile Mempelai</h2>
+    <div class="storybook">
 
-        <!-- Groom -->
-        <div class="profile-card">
-          <div class="image-frame">
-            <img src="image.png" alt="Pengantin Pria">
-          </div>
-          <h3 >dw</h3>
+      <!-- Halaman kiri: Groom -->
+      <div class="page groom">
+        <div class="photo-frame1">
+          <img src="image.png" alt="Pengantin Pria">
+        </div>
+        <div class="page-content">
+          <h3>dw</h3>
           <p>Putra dari Bapak A & Ibu B</p>
         </div>
+      </div>
 
-        <div class="divider">✦</div>
+      <!-- Tengah: Ornamen / Kutipan -->
+      <div class="page-divider">
+        <div class="ornament">✦</div>
+        <p class="quote">"Two souls, one journey"</p>
+        <div class="ornament">✦</div>
+      </div>
 
-        <!-- Bride -->
-        <div class="profile-card">
-          <div class="image-frame">
-            <img src="image.png" alt="Pengantin Wanita">
-          </div>
+      <!-- Halaman kanan: Bride -->
+      <div class="page bride">
+        <div class="photo-frame1">
+          <img src="image.png" alt="Pengantin Wanita">
+        </div>
+        <div class="page-content">
           <h3>mr</h3>
           <p>Putri dari Bapak C & Ibu D</p>
         </div>
-
       </div>
 
     </div>
   </div>
 </section>
+
+
+
 
 
 
