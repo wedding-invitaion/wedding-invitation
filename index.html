@@ -593,6 +593,7 @@ button{
 /* ===== DARK LUXURY PROFILE ===== */
 .quote-mempelai{
   font-size: 10px;
+  
 }
 .page.bride {
   background: rgba(173,216,230,0.08); /* biru lembut */
@@ -620,22 +621,28 @@ button{
   gap: 20px;
   position: relative;
   padding: 20px;
+  flex-wrap: wrap;
+
 }
 
 /* Halaman kiri & kanan */
 .page {
-  flex: 1;
+  flex: 0 0 auto;
   background: rgba(255,255,255,0.08);
   backdrop-filter: blur(12px);
   border-radius: 20px;
   padding: 30px;
+  min-height: 200px;
+
   text-align: center;
   box-shadow: inset 0 0 40px rgba(255,215,0,0.2),
               0 0 25px rgba(255,215,0,0.3);
   position: relative;
   overflow: hidden;
   align-items: center;
-  width: 100%; max-width: 320px; /* batasi lebar card di HP */ margin: 0 auto;
+  width: 100%; 
+  max-width: 200px; /* batasi lebar card di HP */ 
+  margin: 0 auto;
 }
 
 /* Efek lipatan buku */
@@ -706,6 +713,7 @@ button{
   color: #fff;
   text-shadow: 0 0 10px rgba(0,0,0,0.8);
   line-height: 1.6;
+  
 }
 .light .page-content p {
   font-size: 0.8em;
