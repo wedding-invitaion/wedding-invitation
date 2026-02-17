@@ -275,8 +275,8 @@ body.light .btn{
 .light .quote-card p {
   font-size: 0.8em;
   font-family: 'Playfair Display', serif;
-  color: #7e1352;
-  text-shadow: 0 0 10px rgba(213, 240, 74, 0.8);
+  color: #520b34;
+  text-shadow: 0 0 10px rgb(251, 253, 254);
   line-height: 1.6;
 }
 
@@ -568,14 +568,33 @@ button{
 .welcome{
   text-align:center;
   padding:15px 25px;
+  color:#f5f7fb;
+  font-size:14px;
+   text-shadow: 0 0 10px rgba(250, 244, 244, 0.8);
+  line-height: 1.6;
+}
+.light .welcome{
+  text-align:center;
+  padding:15px 25px;
+  color:#b32b95;
+  font-size:14px;
+   text-shadow: 0 0 10px rgba(253, 36, 221, 0.974);
+  line-height: 1.6;
 }
 
 /* Kepada Yth */
 .welcome-to{
-  font-size:13px;
+  font-size:11px;
   letter-spacing:2px;
   text-transform:uppercase;
   color:#cfcfcf;
+  margin-top:30px;
+}
+.light .welcome-to{
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#7d7979;
   margin-top:30px;
 }
 
@@ -586,7 +605,12 @@ button{
   color:#ffd700;
   margin-top:6px;
 }
-
+.light .guest-name{
+  font-family:'Playfair Display',serif;
+  font-size:20px;
+  color:#ce227e;
+  margin-top:6px;
+}
 
 
 
@@ -599,6 +623,13 @@ button{
    text-shadow: 1px 1px 2px #ffd700, 2px 2px 6px rgba(0,0,0,0.5), 0 0 10px rgba(255,215,0,0.6); /* glow emas */
     margin: 0;
 }
+.light .nama-mempelai {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6em;
+  color: #efdfec;
+   text-shadow: 1px 1px 2px #0b0b065a, 2px 2px 6px rgba(0,0,0,0.5), 0 0 10px rgba(11, 11, 5, 0.972); /* glow emas */
+    margin: 0;
+}
 
 
 .page.groom {
@@ -606,6 +637,13 @@ button{
   box-shadow: inset 0 0 40px rgba(16, 102, 131, 0.25),
               0 0 25px rgba(255,182,193,0.3);
 }
+.light .page.groom {
+  background: rgba(173,216,230,0.08); /* biru lembut */
+  box-shadow: inset 0 0 40px rgba(6, 180, 238, 0.25),
+              0 0 25px rgb(44, 164, 164);
+}
+
+
 .page.groom::before { 
   content: ""; position: absolute; 
   top: 0; bottom: 0; left: 0; 
@@ -672,6 +710,17 @@ button{
   height: 140px;
   
 }
+.light .photo-frame1 {
+  border: 5px solid rgb(243, 124, 195);
+  border-radius: 50%;
+  padding: 5px;
+  display: inline-block;
+  box-shadow: 0 0 25px rgba(247, 61, 232, 0.846);
+  position: relative;
+  width: 140px; 
+  height: 140px;
+  backdrop-filter: blur(8px);
+}
 .photo-frame1 img {
   width: 140px;
   height: 140px;
@@ -721,7 +770,7 @@ button{
   font-size: 0.8em;
   font-family: 'Playfair Display', serif;
   color: #7e1352;
-  text-shadow: 0 0 10px rgba(213, 240, 74, 0.8);
+  text-shadow: 0 0 10px rgba(62, 70, 20, 0.8);
   line-height: 1.6;
 }
 
@@ -880,6 +929,7 @@ button{
     <div class="quote-card">
       <p>
         "Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri, supaya kamu merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang." 
+        <br>
         <br>(QS. Ar-Rum: 21)
       </p>
     </div>
@@ -965,19 +1015,6 @@ button{
     </div>
   </div>
 </section>
-
-
-
-<div class="section" id="rsvp">
-  <div class="glass">
-    <h2>Konfirmasi Kehadiran</h2>
-    <form>
-      <input type="text" placeholder="Nama" required>
-      <input type="email" placeholder="Email" required>
-      <button>Kirim RSVP</button>
-    </form>
-  </div>
-</div>
 
 
 <!-- Section Terima Kasih -->
