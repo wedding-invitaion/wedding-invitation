@@ -791,6 +791,68 @@ button{
   to { opacity: 1; transform: scale(1.2); }
 }
 
+/* susuanan acara */
+.agenda-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+}
+
+.agenda-list li {
+  opacity: 0; transform: translateY(20px); animation: fadeInUp 0.6s ease forwards;
+  font-family: 'Playfair Display', serif;
+  font-size: 1em;
+  color: #444;
+  margin: 12px 0;
+  padding: 12px 16px;
+  border-left: 5px solid #ff69b4; /* garis pink */
+  background: linear-gradient(90deg, rgba(255,255,255,0.9), rgba(255,240,245,0.9));
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(255,182,193,0.4);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.agenda-list li:nth-child(1) { animation-delay: 0.2s; } .agenda-list li:nth-child(2) { animation-delay: 0.4s; } .agenda-list li:nth-child(3) { animation-delay: 0.6s; } .agenda-list li:nth-child(4) { animation-delay: 0.8s; } .agenda-list li:nth-child(5) { animation-delay: 1s; } .agenda-list li:nth-child(6) { animation-delay: 1.2s; } .agenda-list li:nth-child(7) { animation-delay: 1.4s; } @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); 
+} }
+
+
+/* Efek hover agar terasa interaktif */
+.agenda-list li:hover {
+  transform: translateX(5px);
+  box-shadow: 0 6px 18px rgba(255,105,180,0.6);
+}
+
+/* Tambahkan ikon bulat di kiri tiap item */
+.agenda-list li::before {
+  content: "✦"; /* bisa diganti dengan emoji lain */
+  position: absolute;
+  left: -18px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ff69b4;
+  color: #fff;
+  font-size: 0.8em;
+  border-radius: 50%;
+  padding: 4px;
+  box-shadow: 0 0 8px rgba(255,105,180,0.8);
+  animation: pulse 2s infinite;
+}
+
+/* Waktu acara */
+.agenda-list li .time {
+  font-weight: bold;
+  color: #d63384;
+  margin-right: 10px;
+  text-shadow: 0 0 8px rgba(255,182,193,0.6);
+}
+
+/* Animasi pulse untuk ikon */
+@keyframes pulse {
+  0% { transform: scale(1) translateY(-50%); box-shadow: 0 0 8px rgba(255,105,180,0.6); }
+  50% { transform: scale(1.2) translateY(-50%); box-shadow: 0 0 15px rgba(255,105,180,0.9); }
+  100% { transform: scale(1) translateY(-50%); box-shadow: 0 0 8px rgba(255,105,180,0.6); }
+}
 
 
 
@@ -937,32 +999,40 @@ button{
   </div>
 </section>
 
+<section class="section">
+  <div class="glass">
+    <h2>Susunan Acara</h2>
+    <div class="storybook">
 
+      <div class="page groom">
+        <div class="page-content">
+          <h1 class="nama-mempelai">Agenda</h1>
+          <ul class="agenda-list">
+            <ul class="agenda-list">
+  
+  <li><span class="time">08.30</span> Kedatangan tamu & penyambutan</li>
+  <li><span class="time">09.00</span> Prosesi Akad Nikah</li>
+  <li><span class="time">10.00</span> Doa bersama & ucapan selamat</li>
+  <li><span class="time">10.30</span> Sesi foto bersama</li>
+  <li><span class="time">11.30</span> Persiapan resepsi</li>
+  <li><span class="time">12.00</span> Resepsi & makan siang</li>
+  <li><span class="time">13.00</span> Penutup acara</li>
+</ul>
 
-<div class="section" id="detail">
-  <div class="glass detail-card">
-    <h2 class="detail-title">Detail Acara</h2>
-    
-    <div class="circle-grid">
-      <div class="circle">
-        <div class="icon">📍</div>
-        <p>Hotel Emerald Ballroom</p>
+</ul>
+
+          </ul>
+        </div>
       </div>
-      <div class="circle">
-        <div class="icon">⏰</div>
-        <p>16:00 WIB</p>
-      </div>
-      <div class="circle">
-        <div class="icon">👗</div>
-        <p>Formal Elegan</p>
-      </div>
+
     </div>
-
-
-
-    <a href="#rsvp" class="btn">RSVP</a>
   </div>
-</div>
+</section>
+
+
+
+
+    
 
 <div class="section">
   <div class="glass">
