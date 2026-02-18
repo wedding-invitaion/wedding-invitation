@@ -547,8 +547,12 @@ button{
 .scene h3 {
   font-family: 'Great Vibes', cursive;
   font-size: 1.8em;
-  color: #968212;
+  color: #dcc333;
   margin-bottom: 10px;
+}
+.light .scene h3 {
+  color: #a99311;
+  
 }
 
 .scene p {
@@ -576,9 +580,9 @@ button{
 .light .welcome{
   text-align:center;
   padding:15px 25px;
-  color:#b32b95;
+  color:#5c0f4b;
   font-size:14px;
-   text-shadow: 0 0 10px rgba(253, 36, 221, 0.974);
+   text-shadow: 0 0 10px rgba(251, 243, 250, 0.974);
   line-height: 1.6;
 }
 
@@ -852,6 +856,23 @@ button{
   100% { transform: scale(1) translateY(-50%); box-shadow: 0 0 10px rgba(0,191,255,0.6); }
 }
 
+/* ===== ICON TENGAH LOKASI ===== */
+
+#lokasi p {
+  position: relative;
+  padding-top: 45px; /* ruang untuk icon */
+}
+
+/* ICON MAP */
+#lokasi p::before {
+  content: "📍";              /* bisa diganti */
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.6rem;
+  opacity: 0.85;
+}
 
 
 
@@ -1013,7 +1034,6 @@ button{
   <li><span class="time">09.00</span> Prosesi Akad Nikah</li>
   <li><span class="time">10.00</span> Doa bersama & ucapan selamat</li>
   <li><span class="time">10.30</span> Sesi foto bersama</li>
-  <li><span class="time">11.30</span> Persiapan resepsi</li>
   <li><span class="time">12.00</span> Resepsi & makan siang</li>
   <li><span class="time">13.00</span> Penutup acara</li>
 </ul>
