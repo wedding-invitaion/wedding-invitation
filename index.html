@@ -900,10 +900,16 @@ button{
 }
 
 
+
 </style>
 </head>
 
 <body>
+
+  <audio id="bgMusic" loop>
+  <source src="hitslab-wedding-wedding-anniversary-music-282316.mp3" type="audio/mpeg">
+</audio>
+
 
 <!-- 🌙 TOGGLE -->
 <div id="themeToggle" onclick="toggleTheme()">🌙</div>
@@ -922,9 +928,7 @@ button{
   </div>
 </div>
 
-<audio id="bgMusic" loop>
-  <source src="musik-romantis.mp3" type="audio/mpeg">
-</audio>
+
 
 <!-- ================= ISI UNDANGAN ASLI (TIDAK DIUBAH) ================= -->
 
@@ -941,14 +945,14 @@ button{
       <div class="neon"><span id="hours">0</span><small>Jam</small></div> 
       <div class="neon"><span id="mins">0</span><small>Menit</small></div>
     </div>
-    <a href="#detail" class="btn">Lihat Detail</a>
+     <br></br>
   </div>
 </div>
 
 
 <section class="section">
   <div class="glass">
-     <h2 >our invitation</h2>
+     <h2 >Our Invitation</h2>
     <!-- Kata Sambutan -->
     <div class="welcome">
       <p>
@@ -1109,7 +1113,7 @@ button{
 <!-- Section Terima Kasih -->
 <section class="section">
   <div class="glass">
-    <h2>Terima Kasih</h2>
+    <h2>Terima Kasih💖</h2>
     <p>Terima kasih atas doa dan kehadiran Anda. Kehormatan dan kebahagiaan bagi kami dapat berbagi momen istimewa ini bersama Anda.</p>
   </div>
 </section>
@@ -1144,6 +1148,8 @@ function openInvite(){
   launchConfetti();
   setTimeout(()=>lock.style.display="none",1200);
 }
+
+
 
 /* FLOWER */
 for(let i=0;i<20;i++){
@@ -1226,9 +1232,6 @@ function toggleTheme() {
     toggleBtn.textContent = "☀️"; // mode dark → tampilkan matahari
   }
 }
-
-
-
 
 
 </script>
